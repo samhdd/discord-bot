@@ -1,36 +1,28 @@
 # Changelog
 
-## [1.0.0] - 2023-05-11
+## [1.2.0] - 2025-05-11
 
 ### Added
-- Initial project setup with Node.js and Discord.js
-- Basic bot structure with command handler
-- Core commands (ping, server, user, codeqr)
-- ESLint configuration for code quality
-- Environment variable support via dotenv
+- New QR code generation command (/qr)
+- Command handler now supports subdirectories
+- New deployment script for command registration
+- Improved error handling for command loading
+- Support for subdirectory commands
 
-### Changed
-- Updated dependency version to latest stable release
-- Optimized project structure for scalability
-- Added deployment script (deploy-command.js)
-
-### Fixed
-- Initialized empty changelog file
-- Resolved command loading issues
-
-## [1.1.0] - 2023-05-11
+## [1.1.0] - 2025-05-10
 
 ### Added
-- Deployment script for registering commands (deploy-command.js)
-- New command handler structure
-- Code formatting with Prettier
-- New command: code snippet sharing (code.txt)
+- Command handler now supports subdirectories
+- New deployment script for command registration
+- Improved error handling for command loading
+- Support for subdirectory commands
 
 ### Changed
-- Updated command registration process
-- Improved error handling
-- Optimized command loading
+- Updated command registration process to handle subdirectories
+- Fixed ESLint errors in deployment script
+- Improved error messages for command loading
 
 ### Fixed
+- Command loading from subdirectories
 - Command registration issues
-- Error reporting in command handler
+- ESLint warnings in deployment script
