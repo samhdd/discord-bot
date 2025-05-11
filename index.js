@@ -35,31 +35,30 @@ client.once(Events.ClientReady, readyClient => {
 // Log in to Discord with your client's token
 client.login(token);
 
-client.on(Events.InteractionCreate, interaction => {
-	// call the command's .execute() method and pass in the interaction variable as its argument. In case something goes wrong, catch and log any error to the console.
-	client.on(Events.InteractionCreate, async interaction => {
 
-		// method to exit the handler if another type is encountered
-		if (!interaction.isChatInputCommand()) return;
-		const command = interaction.client.commands.get(interaction.commandName);
+client.on(Events.InteractionCreate, async interaction => {
 
-		if (!command) {
-			console.error(`No command matching ${interaction.commandName} was found.`);
-			return;
-		}
+	// method to exit the handler if another type is encountered
+	if (!interaction.isChatInputCommand()) return;
+	const command = interaction.client.commands.get(interaction.commandName);
 
-		try {
-			await command.execute(interaction);
+	if (!command) {
+		console.error(`No command matching ${interaction.commandName} was found.`);
+		return;
+	}
+
+	try {
+		await command.execute(interaction);
+	}
+	catch (error) {
+		console.error(error);
+		if (interaction.replied || interaction.deferred) {
+			await interaction.followUp({ content: 'There was an error while executing this command!', flags: MessageFlags.Ephemeral });
 		}
-		catch (error) {
-			console.error(error);
-			if (interaction.replied || interaction.deferred) {
-				await interaction.followUp({ content: 'There was an error while executing this command!', flags: MessageFlags.Ephemeral });
-			}
-			else {
-				await interaction.reply({ content: 'There was an error while executing this command!', flags: MessageFlags.Ephemeral });
-			}
+		else {
+			await interaction.reply({ content: 'There was an error while executing this command!', flags: MessageFlags.Ephemeral });
 		}
-	});
+	}
+
 	console.log(interaction);
 });
