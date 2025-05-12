@@ -14,9 +14,9 @@ module.exports = {
 			// Option name
 			option.setName('text')
 			// Option description
-			.setDescription('The text or URL to encode in the QR code')
+				.setDescription('The text or URL to encode in the QR code')
 			// Make option required
-			.setRequired(true)),
+				.setRequired(true)),
 	// Command execution handler
 	async execute(interaction) {
 		// Get input text from interaction

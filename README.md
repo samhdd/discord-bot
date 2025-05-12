@@ -22,8 +22,10 @@ A Discord bot with utility commands including QR code generation, user informati
 - Use `/user` to get user information
 - Use `/server` to get server information
 
-## Configuration
-Edit `config.json` to customize bot behavior.
+## Customizing Commands
+To add or modify commands, create new .js files in the `commands/utility/` directory. Each file should define a new command following the structure shown in existing command files.
+
+After adding new commands, run `node deploy-commands.js` to register them with Discord.
 
 ## Contributing
 Pull requests are welcome. Please open an issue first to discuss changes.
