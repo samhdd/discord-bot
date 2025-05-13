@@ -1,0 +1,39 @@
+# Ignore local node_modules directory (dependencies will be installed inside the container)
+node_modules
+qr
+eslint.config.js
+workflowai
+# Ignore npm debug logs
+npm-debug.log
+npm-debug.log.*
+yarn-debug.log
+yarn-error.log
+
+# Ignore common OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore environment files (these should be handled via environment variables or secrets in production)
+
+# Ignore version control directory
+.git
+.gitignore
+
+# Ignore Docker-specific files that shouldn't be part of the image itself
+Dockerfile
+.dockerignore
+
+# Ignore test files if not needed in the final image
+# test/
+# tests/
+# *.test.js
+# *.spec.js
+
+# Ignore build output if you are building within the Dockerfile or in a separate stage
+# dist/
+# build/
+# coverage/
+
+# Ignore any other development-specific files or folders
+*.md # If you don't need markdown files in the image
+.vscode/
